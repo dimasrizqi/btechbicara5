@@ -2,7 +2,20 @@
 
 step
 
-* add Source NAT rule for Internet Access on vm-router.
+* setup os machine as a router.
+ 
+1. enable ipv4 packet forwarding
+
+```
+vi /etc/sysctl.conf
+...
+net.ipv4.ip_forward=1
+...
+
+sysctl -p
+```
+
+2. add Source NAT rule for Internet Access on vm-router
 
 ```
 iptables -t nat -I POSTROUTING -o ens5 -j MASQUERADE
@@ -43,20 +56,10 @@ vi custom-resources.yaml
 
 kubectl apply -f custom-resources.yaml
 ```
-* setup os machine as a router.
 
-1. enable ipv4 packet forwarding
+* setup BGP on vm-router
 
-```
-vi /etc/sysctl.conf
-...
-net.ipv4.ip_forward=1
-...
-
-sysctl -p
-```
-
-2. setup BGP.
+1. setup BGP.
 ```
 add-apt-repository ppa:cz.nic-labs/bird
 apt install bird2
