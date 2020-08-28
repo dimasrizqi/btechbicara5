@@ -101,9 +101,11 @@ systemctl restart bird
 
 * setup Porter on k8s master.
 
+```
 helm repo add test https://charts.kubesphere.io/test
 helm repo update
 helm install porter test/porter
+```
 
 ```
 vi bgp.yaml
