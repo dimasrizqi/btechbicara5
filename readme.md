@@ -40,9 +40,9 @@ vi custom-resources.yaml
 ...
 |- 192.168.0.0/16 |+ 10.244.0.0/16
 ...
-```
-kubectl apply -f custom-resources.yaml
 
+kubectl apply -f custom-resources.yaml
+```
 * setup os machine as a router.
 
 1. enable ipv4 packet forwarding
