@@ -155,6 +155,7 @@ spec:
 
 * test
 
+```
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -192,7 +193,7 @@ spec:
     - name: http
       port: 8088
       targetPort: 80
-
+```
 
 references: 
 - https://github.com/kubesphere/porter/blob/master/doc/simulate_with_bird.md
